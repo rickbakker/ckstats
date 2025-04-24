@@ -141,13 +141,29 @@ export default function PoolStatsChart({ data }: PoolStatsChartProps) {
       hour: '2-digit',
       minute: '2-digit',
     }),
-    hashrate1m: Number(item.hashrate1m) / 1000000000000000,
-    hashrate5m: Number(item.hashrate5m) / 1000000000000000,
-    hashrate15m: Number(item.hashrate15m) / 1000000000000000,
-    hashrate1hr: Number(item.hashrate1hr) / 1000000000000000,
-    hashrate6hr: Number(item.hashrate6hr) / 1000000000000000,
-    hashrate1d: Number(item.hashrate1d) / 1000000000000000,
-    hashrate7d: Number(item.hashrate7d) / 1000000000000000,
+
+    // Original PH/s values
+
+    //users: Number(item.users) / 1000000000000000,
+    //workers: Number(item.workers) / 1000000000000000,
+    //hashrate1m: Number(item.hashrate1m) / 1000000000000000,
+    //hashrate5m: Number(item.hashrate5m) / 1000000000000000,
+    //hashrate15m: Number(item.hashrate15m) / 1000000000000000,
+    //hashrate1hr: Number(item.hashrate1hr) / 1000000000000000,
+    //hashrate6hr: Number(item.hashrate6hr) / 1000000000000000,
+    //hashrate1d: Number(item.hashrate1d) / 1000000000000000,
+    //hashrate7d: Number(item.hashrate7d) / 1000000000000000,
+
+    //Convert to TH/s
+
+    hashrate1m: Number(item.hashrate1m) / 1000000000000,
+    hashrate5m: Number(item.hashrate5m) / 1000000000000,
+    hashrate15m: Number(item.hashrate15m) / 1000000000000,
+    hashrate1hr: Number(item.hashrate1hr) / 1000000000000,
+    hashrate6hr: Number(item.hashrate6hr) / 1000000000000,
+    hashrate1d: Number(item.hashrate1d) / 1000000000000,
+    hashrate7d: Number(item.hashrate7d) / 1000000000000,
+
     SPS1m: item.SPS1m ?? 0,
     SPS5m: item.SPS5m ?? 0,
     SPS15m: item.SPS15m ?? 0,
@@ -227,7 +243,7 @@ export default function PoolStatsChart({ data }: PoolStatsChartProps) {
 
   const renderHashrateChart = () => (
     <div className="h-80 w-full mb-8">
-      <h2 className="text-xl font-bold mb-2">Hashrate (PH/s)</h2>
+      <h2 className="text-xl font-bold mb-2">Hashrate (TH/s)</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={formattedData}

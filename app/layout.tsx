@@ -1,4 +1,7 @@
 import './globals.css';
+
+import React from 'react';
+
 import { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 

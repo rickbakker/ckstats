@@ -13,7 +13,7 @@ import {
 } from '../utils/helpers';
 
 const CountdownTimer = dynamic(() => import('./CountdownTimer'), {
-  ssr: false,
+  ssr: !!false,
 });
 
 interface PoolStatsDisplayProps {
