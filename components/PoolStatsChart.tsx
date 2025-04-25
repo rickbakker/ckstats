@@ -173,7 +173,7 @@ export default function PoolStatsChart({ data }: PoolStatsChartProps) {
   }));
 
   const hashrateTooltipFormatter = (value: number, name: string) => [
-    `${value.toLocaleString(undefined, { maximumFractionDigits: 1 })} PH/s`,
+    `${value.toLocaleString(undefined, { maximumFractionDigits: 1 })} TH/s`,
     name,
   ];
 
