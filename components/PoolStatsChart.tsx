@@ -156,8 +156,8 @@ export default function PoolStatsChart({ data }: PoolStatsChartProps) {
 
     //Convert to TH/s
 
-    users: Number(item.users) / 1000000000000,
-    workers: Number(item.workers) / 1000000000000,
+    users: Number(item.users),
+    workers: Number(item.workers),
     hashrate1m: Number(item.hashrate1m) / 1000000000000,
     hashrate5m: Number(item.hashrate5m) / 1000000000000,
     hashrate15m: Number(item.hashrate15m) / 1000000000000,
