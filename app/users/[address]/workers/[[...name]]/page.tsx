@@ -12,11 +12,10 @@ import {
   getPercentageChangeColor,
 } from '../../../../../utils/helpers';
 
-export default async function WorkerPage({
-  params,
-}: {
-  params: { address: string; name?: string[] };
+export default async function WorkerPage(props: {
+  params: Promise<{ address: string; name?: string[] }>;
 }) {
+  const params = await props.params;
   const decodedName = params.name ? decodeURIComponent(params.name[0]) : '';
   const worker = await getWorkerWithStats(params.address, decodedName);
 

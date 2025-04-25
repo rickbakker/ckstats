@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import { updateSingleUser } from '../../../lib/api';
+// eslint-disable-next-line import/no-named-as-default
 import prisma from '../../../lib/db';
 import { validateBitcoinAddress } from '../../../utils/validateBitcoinAddress';
 

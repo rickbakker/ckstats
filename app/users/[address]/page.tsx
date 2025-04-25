@@ -19,16 +19,14 @@ import {
   getPercentageChangeColor,
   calculateBlockChances,
 } from '../../../utils/helpers';
-
-export default async function UserPage({
-  params,
-}: {
-  params: { address: string };
-}) {
+type params = Promise<{ address: string }>;
+export default async function UserPage(props: { params: Promise<params> }) {
+  const params = await props.params;
+  const { address }: { address: string } = await params;
   const [user, stats, historicalStats] = await Promise.all([
-    getUserWithWorkersAndStats(params.address),
+    getUserWithWorkersAndStats(address),
     getLatestPoolStats(),
-    getUserHistoricalStats(params.address),
+    getUserHistoricalStats(address),
   ]);
 
   if (!user) {
