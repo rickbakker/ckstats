@@ -10,7 +10,7 @@ export function formatNumber(num: number | bigint): string {
   } else if (absNum >= 1e12) {
     return (Number(num) / 1e12).toFixed(2) + ' T';
   } else if (absNum >= 1e9) {
-    return (Number(num) / 1e9).toFixed(2) + ' B';
+    return (Number(num) / 1e9).toFixed(2) + ' G';
   } else if (absNum >= 1e6) {
     return (Number(num) / 1e6).toFixed(2) + ' M';
   } else if (absNum >= 1e3) {

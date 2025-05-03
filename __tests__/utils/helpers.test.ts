@@ -15,7 +15,7 @@ describe('Helper Functions', () => {
     it('formats numbers correctly', () => {
       expect(formatNumber(1000)).toBe('1.00 K');
       expect(formatNumber(1000000)).toBe('1.00 M');
-      expect(formatNumber(1000000000)).toBe('1.00 B');
+      expect(formatNumber(1000000000)).toBe('1.00 G');
       expect(formatNumber(1000000000000)).toBe('1.00 T');
       expect(formatNumber(1000000000000000)).toBe('1.00 Q');
       expect(formatNumber(1000000000000000000)).toBe('1.00 Qi');
